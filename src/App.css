@@ -1,0 +1,31 @@
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  position: relative;
+  padding: 5px 20px 5px 30px;
+}
+
+.dropdown-toggle .arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+}
+
+.dropdown-toggle.active .arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-menu.active {
+  display: block;
+}
