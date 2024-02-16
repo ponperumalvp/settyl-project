@@ -1,31 +1,27 @@
-import React, { useState } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import { setParentState } from "../redux_thunk/redux_thunk";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setParentState } from "../redux_thunk/redux_thunk";
 import Button from "../../../components/button/Button";
 import Input from "../../../components/input/Input";
-const ChildComponent2 = ({ onChildStateChange }) => {
-  const [childState, setChildState] = useState("");
-  // const dispatch = useDispatch();
-  // const { parentState } = useSelector((store) => store.settyl);
+const ChildComponent2 = () => {
+  const dispatch = useDispatch();
+  const { parentState } = useSelector((store) => store.settyl);
 
-  // const handleChildStateChange = (e) => {
-  //   const value = e.target.value;
-  //   dispatch(setChildState(value));
-  // };
+  const handleChildStateChange = (e) => {
+    const value = e.target.value;
+    dispatch(setParentState(value));
+  };
 
   return (
     <div className="flex flex-col gap-5 text-center">
       <Input
         type="text"
-        value={childState}
-        onChange={(e) => setChildState(e.target.value)}
+        value={parentState}
+        onChange={handleChildStateChange}
         placeholder="Enter your task"
       />
-      <Button
-        onClick={() => onChildStateChange({ task: childState })}
-        children="Using Redux"
-        className="bg-btClr1 text-white"
-      ></Button>
+
+      <Button children="Using Redux" className="bg-btClr1 text-white"></Button>
       <div className="mt-40 ">
         <Button
           children=" Change State "

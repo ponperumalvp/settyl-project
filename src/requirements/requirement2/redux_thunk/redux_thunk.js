@@ -14,6 +14,5 @@ export const myReducer = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { setParentState } = myReducer.actions;
 export const settylReducer = myReducer.reducer;
